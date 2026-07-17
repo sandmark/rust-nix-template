@@ -1,6 +1,11 @@
-{ inputs, ... }:
-{
-  perSystem = { config, self', pkgs, lib, ... }: {
+{inputs, ...}: {
+  perSystem = {
+    config,
+    self',
+    pkgs,
+    lib,
+    ...
+  }: {
     devShells.default = pkgs.mkShell {
       name = "rust-nix-template-shell";
       inputsFrom = [

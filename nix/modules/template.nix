@@ -1,10 +1,8 @@
-{ inputs, ... }:
-
-{
+{inputs, ...}: {
   flake = rec {
     templates.default = {
       description = "A batteries-included Rust project template for Nix";
-      path = builtins.path { path = inputs.self; };
+      path = builtins.path {path = inputs.self;};
     };
 
     # https://omnix.page/om/init.html#spec
@@ -29,19 +27,19 @@
         {
           name = "vscode";
           description = "Include the VSCode settings folder (./.vscode)";
-          paths = [ ".vscode" ];
+          paths = [".vscode"];
           value = true;
         }
         {
           name = "github-ci";
           description = "Include GitHub Actions workflow configuration";
-          paths = [ ".github" ];
+          paths = [".github"];
           value = true;
         }
         {
           name = "nix-template";
           description = "Keep the flake template in the project";
-          paths = [ "**/template.nix" ];
+          paths = ["**/template.nix"];
           value = false;
         }
       ];
