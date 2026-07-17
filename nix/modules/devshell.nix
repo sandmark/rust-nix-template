@@ -11,7 +11,12 @@
         just
         nixd # Nix language server
         bacon
+        cargo-edit # crate upgrade tool
+        cargo-outdated # deprecated crate finder
+        cargo-mutants # mutation test
+        cargo-llvm-cov # Coverage
       ];
+      CARGO_MUTANTS_OUTPUT = "target";
     };
   };
 }
