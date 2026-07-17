@@ -12,7 +12,13 @@
     pre-commit.settings = {
       hooks = {
         alejandra.enable = true;
+        end-of-file-fixer.enable = true;
+        mixed-line-endings = {
+          enable = true;
+          args = ["--fix=lf"];
+        };
         rustfmt.enable = true;
+        trim-trailing-whitespace.enable = true;
       };
     };
   };
