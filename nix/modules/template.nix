@@ -37,6 +37,12 @@
           value = false;
         }
         {
+          name = "vira";
+          description = "Include the Vira pipeline configuration (vira.hs)";
+          paths = ["vira.hs"];
+          value = false;
+        }
+        {
           name = "nix-template";
           description = "Keep the flake template in the project";
           paths = ["**/template.nix"];
@@ -56,6 +62,7 @@
               "flake.nix" = true;
               ".github/workflows/ci.yml" = false;
               ".vscode" = false;
+              "vira.hs" = false;
               "nix/modules/template.nix" = false;
             };
             packages.default = {
