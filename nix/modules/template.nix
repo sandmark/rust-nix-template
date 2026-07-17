@@ -28,13 +28,13 @@
           name = "vscode";
           description = "Include the VSCode settings folder (./.vscode)";
           paths = [".vscode"];
-          value = true;
+          value = false;
         }
         {
           name = "github-ci";
           description = "Include GitHub Actions workflow configuration";
           paths = [".github"];
-          value = true;
+          value = false;
         }
         {
           name = "nix-template";
@@ -54,8 +54,8 @@
             source = {
               "Cargo.toml" = true;
               "flake.nix" = true;
-              ".github/workflows/ci.yml" = true;
-              ".vscode" = true;
+              ".github/workflows/ci.yml" = false;
+              ".vscode" = false;
               "nix/modules/template.nix" = false;
             };
             packages.default = {
