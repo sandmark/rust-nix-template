@@ -10,6 +10,10 @@
     lib,
     ...
   }: {
+    rust-project.toolchain = (pkgs.rust-bin.fromRustupToolchainFile (inputs.self + /rust-toolchain.toml)).override (prev: {
+      extensions = prev.extensions ++ ["rust-src" "rust-analyzer" "clippy"];
+    });
+
     rust-project.crates."rust-nix-template".crane.args = {
       # On darwin, you may need framework dependencies like IOKit.
       # The default SDK now provides these automatically - no need to specify them.
