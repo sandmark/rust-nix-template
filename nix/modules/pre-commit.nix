@@ -10,6 +10,7 @@
     ...
   }: {
     pre-commit.settings = {
+      package = pkgs.prek;
       hooks = {
         alejandra.enable = true;
         end-of-file-fixer.enable = true;
