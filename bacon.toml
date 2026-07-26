@@ -23,15 +23,9 @@ command = ["sh", "-c", "cargo mutants -v 2>&1 | cat"]
 need_stdout = true
 watch = ["src"]
 
-[jobs.pre-commit-all]
-command = ["just", "pre-commit-all"]
-need_stdout = true
-watch = ["flake.nix", "nix", "src"]
-
 [keybindings]
 d = "job:private-doc"
 shift-d = "job:private-doc-open"
 v = "job:llvm-cov"
 shift-v = "job:llvm-cov-open"
 m = "job:mutants"
-l = "job:pre-commit-all"
